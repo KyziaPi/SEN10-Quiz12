@@ -1,28 +1,42 @@
-name: ESLint
+name: Deploy static site to GitHub Pages
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'  # Ensure the correct Node.js version
-
+          node-version: 18
+      
       - name: Install dependencies
-        run: npm install  # Installs ESLint and other dependencies
+        run: npm install
+      
+      - name: Run ESLint check
+        run: npx eslint . --ext .js
 
-      - name: Run ESLint
-        run: npm run lint  # Executes linting
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .  # this is your site root folder
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
