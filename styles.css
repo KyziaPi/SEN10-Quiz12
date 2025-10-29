@@ -1,0 +1,102 @@
+/* Reset some default styles to make it more consistent */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light background for better contrast */
+    color: #333; /* Darker text for better readability */
+    line-height: 1.6;
+}
+
+/* Center the main content */
+main {
+    margin: 3rem auto;
+    max-width: 1000px;
+    padding: 2rem;
+    background-color: #fff; /* White background for the content area */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Slight shadow for visual appeal */
+}
+
+/* Centered flex container for headings and content */
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem; /* Space between elements */
+}
+
+/* Main heading styling */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2a2a2a; /* Darker shade for better contrast */
+    text-align: center;
+}
+
+/* Style for links in the main heading */
+h1 a {
+    color: #007acc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+h1 a:hover {
+    color: #005fa3;
+}
+
+/* Styling for the screenshot image */
+.center-flex img {
+    max-width: 100%; /* Ensures image is responsive */
+    height: auto;
+    border-radius: 8px; /* Soft corners for the image */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Subheading styling */
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Styling for unordered list */
+ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+/* List item styling */
+ul li {
+    font-size: 1.1rem;
+    color: #555; /* Slightly lighter text for readability */
+    margin-bottom: 1rem;
+    line-height: 1.8; /* Better line spacing */
+}
+
+/* Footer styling */
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Add padding and margins to the content for spacing */
+ul, h2, h3 {
+    margin: 0 0 2rem;
+}
+
+/* Apply some basic hover effects to improve interaction */
+ul li:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 0.5rem;
+    transition: background-color 0.3s ease;
+}
