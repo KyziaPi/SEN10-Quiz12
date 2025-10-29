@@ -1,0 +1,30 @@
+name: Auto Push to GitHub
+
+on:
+  push:
+    branches:
+      - main  # You can change this to another branch if necessary
+
+jobs:
+  push_code:
+    runs-on: ubuntu-latest  # You can change the OS environment to whatever you prefer
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # Checkout your code so that you can push it
+
+    - name: Set up Git
+      run: |
+        git config --global user.name "Your Name"
+        git config --global user.email "your-email@example.com"
+    
+    - name: Add changes
+      run: |
+        git add .
+        git commit -m "Auto commit: Push changes"
+        git push origin main  # This pushes changes to the 'main' branch on GitHub
+
+    - name: Push changes
+      run: git push origin main  # Push your changes after committing
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token used to authenticate
