@@ -18,12 +18,15 @@ jobs:
         git config --global user.name "Your Name"
         git config --global user.email "your-email@example.com"
     
-    - name: Add changes
+    - name: Check if there are changes to commit
+      run: |
+        git diff --exit-code || echo "Changes detected"
+    
+    - name: Add changes and commit
       run: |
         git add .
-        git commit -m "Auto commit: Push changes"
-        git push origin main  # This pushes changes to the 'main' branch on GitHub
-
+        git commit -m "Auto commit: Push changes" || echo "No changes to commit"
+    
     - name: Push changes
       run: git push origin main  # Push your changes after committing
       env:
