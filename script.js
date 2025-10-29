@@ -10,11 +10,12 @@ console.log("Result: " + result);
 function greet(name) {
     if (name) {
         console.log("Hello " + name);
-    else
+    else {
         console.log("Hello, guest!");
     }// Error: Missing curly braces for else block
 }
 
 greet("Alice"); // Works fine
 greet(); // Will result in unexpected output
+
 
