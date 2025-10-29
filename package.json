@@ -1,5 +1,13 @@
 {
+  "name": "ugly-ui-demo",
+  "version": "1.0.0",
+  "description": "Static site with ESLint check and GitHub Pages deployment",
+  "type": "module",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint . --ext .js"
+  },
+  "devDependencies": {
+    "eslint": "^9.38.0",
+    "@eslint/js": "^9.38.0"
   }
 }
