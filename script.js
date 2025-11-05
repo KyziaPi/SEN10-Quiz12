@@ -5,7 +5,7 @@ window.onload = function() {
 
 // Rainbow floating title (upper middle, centered with spaced words)
 function createFloatingTitle() {
-    const text = "Welcome to the Ugliest Website!" // removed semi-colon for fail test
+    const text = "Welcome to the Ugliest Website!";
     const colors = ["#ff0000", "#ff7f00", "#ffff00", "#00ff00", "#0000ff", "#4b0082", "#8f00ff"];
 
     const container = document.createElement("div");
@@ -99,4 +99,5 @@ function launchConfetti() {
     `;
     document.head.appendChild(style);
 }
+
 
