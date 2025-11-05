@@ -10,8 +10,10 @@ export default [
         window: "readonly",
         document: "readonly",
         console: "readonly",
-        setTimeout: "readonly",  // Add setTimeout as a global
       },
+    },
+    env: {
+      jest: true,  // Add Jest environment to recognize test-related globals
     },
     rules: {
       semi: ["error", "always"],
