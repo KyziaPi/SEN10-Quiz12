@@ -10,6 +10,7 @@ export default [
         window: "readonly",
         document: "readonly",
         console: "readonly",
+        setTimeout: "readonly",  // Add setTimeout as a global
       },
     },
     rules: {
