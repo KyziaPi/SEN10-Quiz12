@@ -67,7 +67,7 @@ jobs:
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .  # your site root folder
+          path: ./nonexistent-folder  # This folder does not exist
 
       - name: Deploy to GitHub Pages
         id: deployment
